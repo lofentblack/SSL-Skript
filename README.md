@@ -1,13 +1,13 @@
 ## Schnellanleitung ##
 
-```wget https://raw.githubusercontent.com/lofentblack/Teamspeak-3-Skript/refs/heads/main/Teamspeak3-Skript.sh```
+```wget https://raw.githubusercontent.com/lofentblack/SSL-Skript/refs/heads/main/SSL-Skript.sh```
 
-```chmod 775 Teamspeak3-Skript.sh```
+```chmod 775 SSL-Skript.sh```
 
-```./Teamspeak3-Skript.sh```
+```./SSL-Skript.sh```
 
 
-## Teamspeak-Server-Verwaltungsskript ##
+## SSL-Verwaltungsskript ##
 
 Dieses Shell-Skript dient zur Vereinfachung der Verwaltung von Prozessen.
 
