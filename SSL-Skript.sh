@@ -51,11 +51,11 @@ if ! [[ $version == $SkriptVersion ]]; then
 
 	echo $(tput setaf 3)"Update von Version "$SkriptVersion" zu "$version"."
 	echo "$(tput sgr0)"
-	wget https://raw.githubusercontent.com/lofentblack/SSL-Skript/refs/heads/main/SSL-Skript.sh -O SSL-Skript.sh-new.sh
+	wget https://raw.githubusercontent.com/lofentblack/SSL-Skript/refs/heads/main/SSL-Skript.sh -O SSL-Skript.sh.new
 	rm $LOCK
-	chmod 775 SSL-Skript-new.sh
+	chmod 775 SSL-Skript.sh.new
 	rm SSL-Skript.sh
-	mv SSL-Skript.sh-new.sh SSL-Skript.sh.sh
+	mv SSL-Skript.sh.new SSL-Skript.sh
 
 fi
 }
