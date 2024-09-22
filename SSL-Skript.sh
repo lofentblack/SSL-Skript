@@ -15,12 +15,12 @@ Benutzer1=root
 Benutzer2=admin
 
 # Fehler Codes
-FEHLER1='Vermutlich wurde crontab noch nie benutzt und wurde deshalb nicht generiert versuche ein test command in "crontab -e" hinzuzufügen und versuche es erneut FehlerCode(01)'
+FEHLER1='Vermutlich wurde crontab noch nie benutzt und wurde deshalb nicht generiert versuche ein Test Kommando in "crontab -e" hinzuzufügen und versuche es erneut FehlerCode(01)'
 FEHLER2="Fehler der Benutzername, mit dem sie Eingeloggt sind, ist unbekannt! FehlerCode(02)"
 FEHLER3="Die Domain, die Sie Hinzufügen möchte, existiert bereits! FehlerCode(03)"
-FEHLER4="Domain wurde nicht Hinzugefügt. Prüfe od die Domain ein Typ von A/AAAA hat! FehlerCode(04)"
+FEHLER4="Domain wurde nicht hinzugefügt. Prüfe, ob die Domain ein Typ von A/AAAA hat! FehlerCode(04)"
 FEHLER5="Das Zertifikat ist nicht älter als 10 Minuten! FehlerCode(05)"
-FEHLER6="Der Apache2 dienst wurde wohl möglich an einem besondem ort insterliert?! FehlerCode(06)"
+FEHLER6="Der Apache2 dienst wurde wohl möglich an einem besonderen Ort installiert?! FehlerCode(06)"
 
 content=$(wget https://raw.githubusercontent.com/lofentblack/SSL-Skript/refs/heads/main/version.txt -q -O -)
 Version=$content
@@ -89,7 +89,7 @@ sleep 1
 
 clear
 clear
-echo $gruen"Bitte starte das Script neu!"
+echo $gruen"Bitte starte das Skript neu!"
 echo "$(tput sgr0)"
 }
 
@@ -128,21 +128,21 @@ clear
 	
 	if [ $machen == 1 ]; then
 		read -p "Bitte gebe nun die Domain ein, die du Hinzufügen möchtest: " domain
-		read -p 'Bitte gebe nun das webroot verzeiniss an (z.b. "/var/www/html/"): ' verzeichniss
+		read -p 'Bitte gebe nun das webroot Verzeichnis an (z.b. "/var/www/html/"): ' verzeichnis
 		
 		if ! [ -d /etc/letsencrypt/live/$domain ]; then 
 					
-			if ! [ -d $verzeichniss ]; then
+			if ! [ -d $verzeichnis ]; then
 				
-				mkdir $verzeichniss
-				if ! [ -s $Verzeichnis/ ]; then
+				mkdir $verzeichnis
+				if ! [ -s $verzeichnis/ ]; then
 					echo "Verzeichnis konnte nicht erstellt werden da es zu viele Unterordner sind."
 					echo "Versuchen Sie das Verzeichnis manuell zu Erstellen"
 				else
-					echo "Verzeichniss wurde Erstellt."
+					echo "Verzeichnis wurde Erstellt."
 				fi
 			else
-				echo "Verzeiniss gefunden."	
+				echo "Verzeichnis gefunden."	
 			fi
 			
 			sleep 1
@@ -178,7 +178,7 @@ echo -e '<IfModule mod_ssl.c>
 			if [ $wasdas = "y" ] || [ $wasdas = "Y" ] || [ $wasdas = "J" ] || [ $wasdas = "j" ] || [ $wasdas = "ja" ] || [ $wasdas = "Ja" ] || [ $wasdas = "Yes" ] || [ $wasdas = "yes" ] || [ $wasdas = "ok" ] || [ $wasdas = "Ok" ] || [ $wasdas = "OK" ] || [ $wasdas = "oK" ] || [ $wasdas = "JA" ] || [ $wasdas = "jA" ] || [ $wasdas = "YES" ] || [ $wasdas = "YEs" ] || [ $wasdas = "yES" ] || [ $wasdas = "yeS" ] || [ $wasdas = "YeS" ] || [ $wasdas = "yES" ] || [ $wasdas = "yEs" ]; then
 				sudo certbot -d $domain --expand
 			else
-				sudo certbot --authenticator webroot --installer apache -w $verzeichniss -d $domain
+				sudo certbot --authenticator webroot --installer apache -w $verzeichnis -d $domain
 			fi
 			
 			
@@ -194,13 +194,13 @@ echo -e '<IfModule mod_ssl.c>
 			if [ -d /etc/letsencrypt/live/$domain ]; then			
 				LOGO
 				echo $gruen
-				echo "Domain wurde Erfolgreich Hinzugefügt"
+				echo "Domain wurde Erfolgreich hinzugefügt"
 				echo "$(tput sgr0)"
 				
 			else
 				
 				echo $rot
-				echo "Domain wurde nicht Hinzugefügt"
+				echo "Domain wurde nicht hinzugefügt"
 				sudo a2dissite $domain.conf
 				rm /etc/apache2/sites-available/$domain
 				rm /etc/apache2/sites-enabled/$domain
@@ -217,7 +217,7 @@ echo -e '<IfModule mod_ssl.c>
 	
 	if [ $machen == 2 ]; then
 		
-		echo "Manuelles Updaten wird Ausgeführt"
+		echo "Manuelles updaten wird ausgeführt"
 		sleep 1
 		
 		sudo certbot renew --force-renewal
@@ -236,13 +236,13 @@ echo -e '<IfModule mod_ssl.c>
 		if ! [ $ALTER -gt 600 ]; then 
 			#weniger als 10min
 			echo $gruen
-			echo "SSL Zertifikat Erfolgreich Erneuert."
+			echo "SSL Zertifikat Erfolgreich erneuert."
 			echo "$(tput sgr0)"
 			exit 0;
 		else
 			#alter als 10 min
 			echo $rot
-			echo "SSL Zertifikat Nicht Erneuert."
+			echo "SSL Zertifikat nicht erneuert."
 			echo "$(tput sgr0)"
 			echo $FEHLER5
 			exit 0;
@@ -288,13 +288,13 @@ echo -e '<IfModule mod_ssl.c>
  			if ! [ $ALTER -gt 600 ]; then 
 				#weniger als 10min
 				echo $gruen
-				echo "Automatisches Update Aktiviert."
+				echo "Automatisches update aktiviert."
 				echo "$(tput sgr0)"
 				exit 0;
 			else
 				#alter als 10 min
 				echo $rot
-				echo "Automatisches Update nicht Aktiviert."
+				echo "Automatisches update deaktiviert."
 				echo "$(tput sgr0)"
 				echo $FEHLER5
 				exit 1;
@@ -332,13 +332,13 @@ echo -e '<IfModule mod_ssl.c>
  		if ! [ $ALTER -gt 600 ]; then 
 			#weniger als 10min
 			echo $gruen
-			echo "Automatisches Update Deaktiviert."
+			echo "Automatisches update deaktiviert."
 			echo "$(tput sgr0)"
 			exit 0;
 		else
 			#alter als 10 min
 			echo $rot
-			echo "Automatisches Update wurde nicht Deaktiviert."
+			echo "Automatisches update wurde nicht Deaktiviert."
 			echo "$(tput sgr0)"
 			echo $FEHLER5
 			exit 1;
