@@ -137,7 +137,7 @@ clear
 				mkdir $verzeichniss
 				if ! [ -s $Verzeichnis/ ]; then
 					echo "Verzeichnis konnte nicht erstellt werden da es zu viele Unterordner sind."
-					echo "Versuchen Sie das Verzeichnis selber zu Erstellen"
+					echo "Versuchen Sie das Verzeichnis manuell zu Erstellen"
 				else
 					echo "Verzeichniss wurde Erstellt."
 				fi
