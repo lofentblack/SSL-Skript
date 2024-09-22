@@ -6,10 +6,11 @@
 
 ```./SSL-Skript.sh```
 
+<img src="https://i.ibb.co/TrbyFNd/ssl.png" alt="ssl" border="0">
 
 ## SSL-Verwaltungsskript ##
 
-Dieses Shell-Skript dient zur Vereinfachung der Verwaltung von Prozessen.
+Mit diesem Skript kann man ganz bequem SSL-Zertifikate für eine Website auf einem Apache-Server hinzufügen und diese automatisch monatlich erneuern lassen.
 
 
 ## Installation ##
