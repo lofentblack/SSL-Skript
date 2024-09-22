@@ -99,7 +99,7 @@ LOGO() {
 	echo "$(tput setaf 2)"
 	figlet -f slant -c $SCRIPTNAME
 	echo $rot
-	echo "Mit dem Ausführen Akzeptieren Sie den Datenschutz von Shop-LB.de."
+	echo "Mit dem Ausführen Akzeptieren Sie die Lizenz von Lofentblack.de/licence."
 	echo "$(tput sgr0)"
 }
 
@@ -115,7 +115,7 @@ clear
 	echo "$(tput setaf 2)"
 	figlet -f slant -c $SCRIPTNAME
 	echo $rot
-	echo "Mit dem Ausführen Akzeptieren Sie den Datenschutz von Shop-LB.de."
+	echo "Mit dem Ausführen Akzeptieren Sie die Lofentblack.de/licence."
 	echo "Achtung dieses Skript funktioniert nur mit dem Webdienst Apache2"
 	echo "$(tput sgr0)"
 	echo "1) SSL Zertifikat Hinzufügen"
